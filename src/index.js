@@ -12,17 +12,17 @@ const genDiff = (file1, file2) => {
   const merged = _.sortBy(Object.keys({ ...filepath1, ...filepath2 }));
   // В пустой объект с помощью reduce добавляем ключи
   return merged.reduce((acc, key) => {
-    if (!Object.hasOwn(filepath1, key)) {
+    if (!Object.hasOwn(filepath1, key) && Object.hasOwn(filepath2, key)) {
       acc[`+ ${key}`] = filepath2[key];
+    } else if (Object.hasOwn(filepath1, key) && !Object.hasOwn(filepath2, key)) {
+      acc[`- ${key}`] = filepath1[key];
     } else if (filepath1[key] === filepath2[key]) {
-      acc[`  ${key}`] = filepath1[key];
-    } else if (Object.hasOwn(filepath2, key)) {
+      acc[`  ${key}`] = filepath1[key] || filepath2[key];
+    } else if (filepath1[key] !== filepath2[key]) {
       acc[`- ${key}`] = filepath1[key];
       acc[`+ ${key}`] = filepath2[key];
-    } else if (Object.hasOwn(file1, key)) {
-      acc[`- ${key}`] = filepath1[key];
     }
-    return { ...acc };
+    return acc;
   }, {});
 };
 export default genDiff;

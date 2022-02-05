@@ -14,10 +14,10 @@ let testData1;
 let testData2;
 let expected;
 beforeEach(() => {
-  testData1 = readFile('file1.json');
-  testData2 = readFile('file2.json');
+  testData1 = getFixturePath('file1.json');
+  testData2 = getFixturePath('file2.json');
   expected = readFile('expected_file.json');
 });
-test('file equality', () => {
+test('file difference', () => {
   expect(genDiff(testData1, testData2)).toEqual(expected);
 });

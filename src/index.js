@@ -6,7 +6,7 @@ import parseFile from './parsers.js';
 const convertToString = (obj) => {
   const stringifiedObj = Object.entries(obj).map((items) => items
     .join(': ')).join('\n');
-  return `{\n${stringifiedObj} \n}`;
+  return `{\n${stringifiedObj}\n}`;
 };
 
 const genDiff = (filepath1, filepath2) => {

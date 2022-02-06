@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/Amanetes/backend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Amanetes/backend-project-lvl2/actions)",
-  "main": "index.js",
+  "main": "genDiff.js",
   "scripts": {
     "test": "npx jest --bail"
   },
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Amanetes/backend-project-lvl2#readme",
   "dependencies": {
     "commander": "^9.0.0",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
@@ -29,6 +30,8 @@
     "eslint": "^8.8.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "jest": "^27.4.7"
+    "eslint-plugin-jest": "^26.0.0",
+    "jest": "^27.4.7",
+    "jest-cli": "^27.5.0"
   }
 }

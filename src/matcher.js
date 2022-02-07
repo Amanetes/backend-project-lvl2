@@ -15,7 +15,7 @@ const matchFiles = ((data1, data2) => {
       acc[`- ${key}`] = data1[key];
       acc[`+ ${key}`] = data2[key];
     } else {
-      acc[` ${key}`] = data1[key];
+      acc[`  ${key}`] = data1[key];
     }
     return acc;
   }, {});

@@ -7,7 +7,7 @@ const createDiff = (data1, data2) => {
   return merged.reduce((acc, key) => {
     // Создание внутреннего представления структуры файла (пример - ESPRIMA)
     // Обязательно вернуть аккумулятор в каждом условии!
-    if (!Object.hasOwn(data1, key)) {
+    if (!_.has(data1, key)) {
       return [...acc, {
         name: key,
         type: 'ADDED',
@@ -15,7 +15,7 @@ const createDiff = (data1, data2) => {
         data2[key],
       }];
     }
-    if (!Object.hasOwn(data2, key)) {
+    if (!_.has(data2, key)) {
       return [...acc, {
         name: key,
         type: 'DELETED',

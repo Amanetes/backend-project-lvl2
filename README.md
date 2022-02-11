@@ -28,14 +28,25 @@ ____
 
 **Program options:**
 
+### Type `gendiff -h` to get help
+### Type `gendiff -f` with files to be compared to specify output format
+### Type `gendiff -V` to check version
+
 | Option |Description|
 | :--- |:----:|
 | -V, --version | output the version number|
 | -f, --format [type] |output format (default: "stylish")|
 | -h, --help |output usage information|
 
-### 1. Compare plain .json files
+### 1. Compare .json files
 [![asciicast](https://asciinema.org/a/VEuUksFXBYQgBiWwpCh9Cx9Bi.svg)](https://asciinema.org/a/VEuUksFXBYQgBiWwpCh9Cx9Bi)
-### 2. Compare plain .yml files
+### 2. Compare .yml files
 [![asciicast](https://asciinema.org/a/F5n0Tkvd6LVpmYw2ZAqE0ShXO.svg)](https://asciinema.org/a/F5n0Tkvd6LVpmYw2ZAqE0ShXO)
-### 3. Compare nested .json & .yml files
+### 3. Compare both .json and .yml files
+[![asciicast](https://asciinema.org/a/I4qaLHSaC0X3dhCr6zxj5ffoF.svg)](https://asciinema.org/a/I4qaLHSaC0X3dhCr6zxj5ffoF)
+### 4. Stylish Output format
+[![asciicast](https://asciinema.org/a/KTHQFE9WdyDUtrrtbt8xCQ9NV.svg)](https://asciinema.org/a/KTHQFE9WdyDUtrrtbt8xCQ9NV)
+### 5. Plain Output format
+[![asciicast](https://asciinema.org/a/rYLOo3BzqYHkYndvD9l9mT6tL.svg)](https://asciinema.org/a/rYLOo3BzqYHkYndvD9l9mT6tL)
+### 6. JSON Output format
+[![asciicast](https://asciinema.org/a/aZvc4mc8L4dbCOQoLpWpPcm92.svg)](https://asciinema.org/a/aZvc4mc8L4dbCOQoLpWpPcm92)

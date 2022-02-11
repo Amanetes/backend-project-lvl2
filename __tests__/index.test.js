@@ -37,3 +37,10 @@ test('json format', () => {
 test('yml', () => {
   expect(genDiff(testYml1, testYml2)).toEqual(expected);
 });
+test('format errors', () => {
+  expect(genDiff(testJson1, testJson2, 'someformat')).toThrow(Error);
+});
+test('parser', () => {
+  expect(path.extname(testJson1)).toEqual('.json');
+  expect(path.extname(testYml1)).toEqual('.yml');
+});

@@ -4,10 +4,16 @@ import parseFile from './parsers.js';
 import format from './formatters/index.js';
 import createDiff from './diffCreator.js';
 
-export default ((filepath1, filepath2, formatName = 'stylish') => {
-  const data1 = parseFile(readFileSync(path.resolve(process.cwd(), filepath1), 'utf8'));
-  const data2 = parseFile(readFileSync(path.resolve(process.cwd(), filepath2), 'utf8'));
+const getFileExtension = (file) => path.extname(file);
+const readFile = (file) => readFileSync(path.resolve(process.cwd(), file), 'utf8');
 
-  const diff = createDiff(data1, data2, format);
+export default ((filepath1, filepath2, formatName = 'stylish') => {
+  const data1 = readFile(filepath1);
+  const data2 = readFile(filepath2);
+  const dataFormat1 = getFileExtension(filepath1);
+  const dataFormat2 = getFileExtension(filepath2);
+  const parsedData1 = parseFile(data1, dataFormat1);
+  const parsedData2 = parseFile(data2, dataFormat2);
+  const diff = createDiff(parsedData1, parsedData2);
   return format(diff, formatName);
 });

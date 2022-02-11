@@ -14,16 +14,26 @@ let testJson2;
 let expected;
 let testYml1;
 let testYml2;
+let expectedPlain;
+let expectedJson;
 beforeEach(() => {
   testJson1 = getFixturePath('file1.json');
   testJson2 = getFixturePath('file2.json');
   testYml1 = getFixturePath('file1.yml');
   testYml2 = getFixturePath('file2.yml');
   expected = readFile('expected_file.txt');
+  expectedPlain = readFile('expected_plain.txt');
+  expectedJson = readFile('expected_json.txt');
 });
-test('json difference check', () => {
-  expect(genDiff(testJson1, testJson2)).toEqual(expected);
+test('stylish format', () => {
+  expect(genDiff(testJson1, testJson2, 'stylish')).toEqual(expected);
 });
-test('yml difference check', () => {
+test('plain format', () => {
+  expect(genDiff(testJson1, testJson2, 'plain')).toEqual(expectedPlain);
+});
+test('json format', () => {
+  expect(genDiff(testJson1, testJson2, 'json')).toEqual(expectedJson);
+});
+test('yml', () => {
   expect(genDiff(testYml1, testYml2)).toEqual(expected);
 });

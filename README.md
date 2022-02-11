@@ -28,9 +28,9 @@ ____
 
 **Program options:**
 
-### Type `gendiff -h` to get help
-### Type `gendiff -f` with files to be compared to specify output format
-### Type `gendiff -V` to check version
+- Type `gendiff -h` to get help
+- Type `gendiff -f` with files to be compared to specify output format
+- Type `gendiff -V` to check version
 
 | Option |Description|
 | :--- |:----:|

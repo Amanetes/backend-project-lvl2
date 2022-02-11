@@ -1,7 +1,7 @@
 import _ from 'lodash';
 // Извлечение значения
 const getValue = (value) => {
-  if (_.isObject(value)) {
+  if (_.isPlainObject(value)) {
     return '[complex value]';
   }
   if (_.isString(value)) {
@@ -13,6 +13,8 @@ const getValue = (value) => {
 const plain = (diff) => {
   const iter = (node, path) => {
     const lines = node
+    // Добавить фильтр, т.к кейс не обрабатывается
+      .filter(({ type }) => type !== 'UNCHANGED')
     // Деструктуризация по ключам объекта
       .map(({
         name, type, value, oldValue, newValue,
@@ -29,7 +31,7 @@ const plain = (diff) => {
           case 'MODIFIED':
             return `Property '${path}${name}' was updated. From ${getValue(oldValue)} to ${getValue(newValue)}`;
           default:
-            return `Property '${path}${name}' wasn't modified`;
+            throw new Error(`Undefined type ${type}`);
         }
       });
     return [...lines].join('\n');

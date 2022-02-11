@@ -16,13 +16,13 @@ ____
 ```bash
 git@github.com:Amanetes/backend-project-lvl2.git
 ```
-2. Type 'make install' 
+2. Type `make install` 
 ```bash
-    make install
+make install
 ```
-3. Type 'npm link'
+3. Type `npm link`
 ```bash
-    npm install
+npm install
 ```
 ____
 

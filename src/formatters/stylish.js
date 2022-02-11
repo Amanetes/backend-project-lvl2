@@ -20,6 +20,9 @@ const stringify = (currentValue, depth) => {
 // Форматирование всего дерева
 const stylish = (diff) => {
   const iter = (node, depth) => {
+    if (_.isPlainObject(node)) {
+      return String(node);
+    }
     const lines = node.map((currentValue) => {
       // Деструктуризируем текущий объект и далее по значению ключа type
       // добавляем знаки и отступы

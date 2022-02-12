@@ -1,6 +1,5 @@
 import stylish from './stylish.js';
 import plain from './plain.js';
-import makeJson from './json.js';
 
 export default (diff, formatName) => {
   switch (formatName) {
@@ -9,7 +8,7 @@ export default (diff, formatName) => {
     case 'plain':
       return plain(diff);
     case 'json':
-      return makeJson(diff);
+      return JSON.stringify(diff);
     default:
       throw new Error(`Undefined format ${formatName}`);
   }

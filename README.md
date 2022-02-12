@@ -17,13 +17,8 @@ ____
 git@github.com:Amanetes/backend-project-lvl2.git
 ```
 2. Type `make install` 
-```bash
-make install
-```
+
 3. Type `npm link`
-```bash
-npm install
-```
 ____
 
 **Program options:**

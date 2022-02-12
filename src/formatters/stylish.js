@@ -1,8 +1,6 @@
 import _ from 'lodash';
 
-// Функция генерации отступа
 const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount);
-// Преобразование текущего объекта в строку
 const stringify = (currentValue, depth) => {
   if (!_.isPlainObject(currentValue)) {
     return String(currentValue);
@@ -17,12 +15,9 @@ const stringify = (currentValue, depth) => {
     `${getIndent(depth)}}`,
   ].join('\n');
 };
-// Форматирование всего дерева
 const stylish = (diff) => {
   const iter = (node, depth) => {
     const lines = node.map((currentValue) => {
-      // Деструктуризируем текущий объект и далее по значению ключа type
-      // добавляем знаки и отступы
       const {
         name, type, value, oldValue, newValue,
       } = currentValue;

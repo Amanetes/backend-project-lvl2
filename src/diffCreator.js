@@ -1,12 +1,8 @@
 import _ from 'lodash';
 
 const createDiff = (data1, data2) => {
-  // Формирование массива уникальных ключей из 2х объектов
   const merged = _.sortBy(Object.keys({ ...data1, ...data2 }));
-  // Выводим в результат новый массив ключей/значений
   return merged.reduce((acc, key) => {
-    // Создание внутреннего представления структуры файла (пример - ESPRIMA)
-    // Обязательно вернуть аккумулятор в каждом условии!
     if (!_.has(data1, key)) {
       return [...acc, {
         name: key,

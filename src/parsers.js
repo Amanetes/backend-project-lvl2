@@ -1,15 +1,14 @@
 import { load } from 'js-yaml';
 
-const parseFile = (file, extension) => {
-  switch (extension) {
+const parseFile = (file, format) => {
+  switch (format) {
     case 'json':
       return JSON.parse(file);
     case 'yml':
-      return load(file);
     case 'yaml':
       return load(file);
     default:
-      throw new Error(`Undefined file extension '${extension}'`);
+      throw new Error(`Undefined file format'${format}'`);
   }
 };
 export default parseFile;

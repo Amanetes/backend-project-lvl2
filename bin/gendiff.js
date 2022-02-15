@@ -8,7 +8,7 @@ program
   .version('0.0.1', '-V, --version', 'output the version number')
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format <type>', 'output format', 'stylish')
-  .action((filepath1, filepath2, option) => {
-    console.log(genDiff(filepath1, filepath2, option.format));
+  .action((filepath1, filepath2, options) => {
+    console.log(genDiff(filepath1, filepath2, options.format));
   });
 program.parse();
